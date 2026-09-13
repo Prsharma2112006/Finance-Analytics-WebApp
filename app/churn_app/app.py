@@ -516,9 +516,17 @@ def load_artifacts():
     return model, features, threshold
 
 
+import os
+
 @st.cache_data
 def load_reference_data():
-    df = pd.read_csv("data/European_Bank.csv")
+    # Gets the exact folder where app.py is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Builds the absolute path to the CSV file inside app/churn_app/data/
+    file_path = os.path.join(current_dir, "data", "European_Bank.csv")
+    
+    df = pd.read_csv(file_path)
     return df
 
 
