@@ -518,7 +518,7 @@ def load_artifacts():
 
 @st.cache_data
 def load_reference_data():
-    df = pd.read_csv("data/European_Bank.csv")
+    df = pd.read_csv("../../data/European_Bank.csv")
     return df
 
 
